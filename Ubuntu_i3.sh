@@ -29,4 +29,4 @@ clear
 ##
 ## Set up feh startup
 ##
-echo "sh ~/.fehbg &" >> ~/.xinitrc
+echo "# sh ~/.fehbg &" >> ~/.xinitrc
