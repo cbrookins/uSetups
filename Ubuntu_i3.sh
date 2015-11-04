@@ -4,18 +4,29 @@
 ##
 ## Update system and install packages
 ##
-sudo apt-get update && sudo apt-get install -y i3 xinit xterm feh nano git wpaguig mutt weechat ranger firefox chromium-browser freerdp tigervnc turses fonts-font-awesome >> /dev/null
+echo "Updating system and installing wanted packages"
+sudo apt-get update && sudo apt-get install -y i3 xinit xterm feh nano git wpaguig mutt weechat ranger firefox chromium-browser freerdp turses fonts-font-awesome
+clear
 
 ##
 ## Clone git repo
 ##
+echo "Downloading dotfiles"
 git clone https://github.com/cbrookins/dotfiles
-
+clear
 
 ##
 ## Copy custom configs
 ##
+echo "Setting up dotfiles"
 ## cp dotfiles/.muttrc
 cp -R dotfiles/.config ~/.config
-cp dotfiles/.bashrc ~/.bashrc
 cp dotfiles/.Xresources ~/.Xresources
+cp /etc/skel/.bashrc ~/.bashrc
+cp /etc/X11/xinitrc ~/.xinitrc
+clear
+
+##
+## Set up feh startup
+##
+echo "sh ~/.fehbg &" >> ~/.xinitrc
