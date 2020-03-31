@@ -5,7 +5,7 @@
 ## Update system and install packages
 ##
 echo "Updating system and installing wanted packages"
-sudo apt update && sudo apt install -y i3 xinit xterm feh nano git wpagui mutt weechat ranger firefox chromium-browser chromium-ublock-origin fonts-font-awesome
+sudo apt update && sudo apt install -y i3 xinit xterm feh nano git wpagui mutt weechat ranger firefox wireless-tools fonts-font-awesome
 clear
 
 ##
