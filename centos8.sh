@@ -6,12 +6,6 @@
 ##
 echo "Updating system..."
 sudo dnf -y update
-clear
-
-## Enable snapd
-sudo systemctl enable --now snapd.socket
-## Enable classic snap support
-sudo ln -s /var/lib/snapd/snap /snap
 
 clear
 
@@ -29,4 +23,13 @@ echo "Installing software..."
 ## Install PowerShell, VSCode
 sudo dnf -y check-update
 sudo dnf -y install git epel-release virt-manager snapd code powershell 
+
+## Enable snapd
+sudo systemctl enable --now snapd.socket
+## Enable classic snap support
+sudo ln -s /var/lib/snapd/snap /snap
+
 clear
+
+echo "Complete"
+
