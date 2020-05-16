@@ -44,4 +44,11 @@ sudo modprobe -a wl
 
 clear
 
+## PIA Client
+echo "Downloading PIA Installation Script"
+wget https://www.privateinternetaccess.com/installer/pia-nm.sh
+chmod +x pia-nm.sh
+
+clear
+
 echo "Complete.  Please reboot."
