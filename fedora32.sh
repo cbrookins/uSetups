@@ -42,4 +42,6 @@ echo "Prepping WiFi Kernel Module.."
 sudo akmods --force --kernel `uname -r`--akmod wl
 sudo modprobe -a wl
 
+clear
+
 echo "Complete.  Please reboot."
