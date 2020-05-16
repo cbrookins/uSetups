@@ -22,7 +22,7 @@ clear
 echo "Installing software..."
 ## Install PowerShell, VSCode
 sudo dnf -y check-update
-sudo dnf -y install git epel-release virt-manager snapd code powershell 
+sudo dnf -y install git epel-release virt-manager snapd code powershell seahorse gtkhash
 
 ## Enable snapd
 sudo systemctl enable --now snapd.socket
