@@ -33,7 +33,7 @@ sudo dnf -y install git snapd code kernel-devel broadcom-wl compat-openssl10
 sudo systemctl enable --now snapd.socket
 ## Enable classic snap support
 sudo ln -s /var/lib/snapd/snap /snap
-sudo snap install powershell
+sudo snap install powershell --classic
 
 clear
 
