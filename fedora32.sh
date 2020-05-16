@@ -10,6 +10,11 @@ sudo dnf -y update
 
 clear
 
+echo "Adding RPM Fusion repos"
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+clear
+
 echo "Adding Microsoft repos"
 ## Register Visual Studio Code repo
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -21,7 +26,6 @@ curl https://packages.microsoft.com/config/rhel/8/prod.repo | sudo tee /etc/yum.
 clear
 
 echo "Installing software..."
-## Install PowerShell, VSCode
 sudo dnf -y check-update
 sudo dnf -y install git snapd code powershell kernel-devel broadcom-wl
 
