@@ -21,13 +21,13 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 
 ## Register the Microsoft RedHat repository
-curl https://packages.microsoft.com/config/rhel/8/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
+curl https://packages.microsoft.com/config/fedora/32/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
 
 clear
 
 echo "Installing software..."
 sudo dnf -y check-update
-sudo dnf -y install git snapd code powershell kernel-devel broadcom-wl
+sudo dnf -y install git snapd code powershell kernel-devel broadcom-wl compat-openssl10
 
 ## Enable snapd
 sudo systemctl enable --now snapd.socket
