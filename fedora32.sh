@@ -27,7 +27,7 @@ clear
 
 echo "Installing software..."
 sudo dnf -y check-update
-sudo dnf -y install git snapd code kernel-devel broadcom-wl compat-openssl10
+sudo dnf -y install git snapd code kernel-devel broadcom-wl compat-openssl10 seahorse gtkhash
 
 ## Enable snapd
 sudo systemctl enable --now snapd.socket
