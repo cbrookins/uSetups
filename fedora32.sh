@@ -27,7 +27,7 @@ clear
 
 echo "Installing software..."
 sudo dnf -y check-update
-sudo dnf -y install git snapd code kernel-devel broadcom-wl compat-openssl10 seahorse gtkhash ffmpeg-libs
+sudo dnf -y install snapd code kernel-devel broadcom-wl compat-openssl10 seahorse gtkhash ffmpeg-libs vlc fuse-exfat exfat-utils
 
 ## Enable snapd
 sudo systemctl enable --now snapd.socket
