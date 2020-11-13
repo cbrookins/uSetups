@@ -21,18 +21,20 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 
 ## Register the Microsoft RedHat repository
 curl https://packages.microsoft.com/config/fedora/33/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
+curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
 
 clear
 
 echo "Installing software..."
 sudo dnf -y check-update
-sudo dnf -y install snapd code kernel-devel broadcom-wl compat-openssl10 seahorse gtkhash ffmpeg-libs vlc fuse-exfat exfat-utils
+sudo dnf -y install code kernel-devel broadcom-wl compat-openssl10 seahorse gtkhash ffmpeg ffmpeg-libs vlc fuse-exfat exfat-utils peek powershell
+## sudo dnf -y install code snapd kernel-devel broadcom-wl compat-openssl10 seahorse gtkhash ffmpeg ffmpeg-libs vlc fuse-exfat exfat-utils
 
 ## Enable snapd
-sudo systemctl enable --now snapd.socket
+## sudo systemctl enable --now snapd.socket
 ## Enable classic snap support
-sudo ln -s /var/lib/snapd/snap /snap
-sudo snap install powershell --classic
+## sudo ln -s /var/lib/snapd/snap /snap
+## sudo snap install powershell --classic
 
 clear
 
