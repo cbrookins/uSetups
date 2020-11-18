@@ -40,8 +40,14 @@ clear
 
 ## Enable BCM43228 WiFi Card
 echo "Prepping WiFi Kernel Module.."
-sudo akmods --force --kernel `uname -r`--akmod wl
-sudo modprobe -a wl
+
+## The two following lines worked for kernel pre-5.9
+##sudo akmods --force --kernel `uname -r`--akmod wl 
+##sudo modprobe -a wl
+
+## Greater than kernel 5.9
+git clone https://github.com/antoineco/broadcom-wl
+dkms add ./broadcom-wl
 
 clear
 
@@ -52,4 +58,6 @@ chmod +x pia-nm.sh
 
 clear
 
-echo "Complete.  Please reboot."
+echo "Complete.  Rebooting in 10s..."
+sleep 10
+reboot
