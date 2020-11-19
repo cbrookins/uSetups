@@ -28,33 +28,21 @@ clear
 echo "Installing software..."
 sudo dnf -y check-update
 sudo dnf -y install code kernel-devel broadcom-wl compat-openssl10 seahorse gtkhash ffmpeg ffmpeg-libs vlc fuse-exfat exfat-utils peek powershell
-## sudo dnf -y install code snapd kernel-devel broadcom-wl compat-openssl10 seahorse gtkhash ffmpeg ffmpeg-libs vlc fuse-exfat exfat-utils
-
-## Enable snapd
-## sudo systemctl enable --now snapd.socket
-## Enable classic snap support
-## sudo ln -s /var/lib/snapd/snap /snap
-## sudo snap install powershell --classic
 
 clear
 
 ## Enable BCM43228 WiFi Card
 echo "Prepping WiFi Kernel Module.."
-
-## The two following lines worked for kernel pre-5.9
-##sudo akmods --force --kernel `uname -r`--akmod wl 
-##sudo modprobe -a wl
-
-## Greater than kernel 5.9
 git clone https://github.com/antoineco/broadcom-wl
 dkms add ./broadcom-wl
 
 clear
 
 ## PIA Client
-echo "Downloading PIA Installation Script"
-wget https://www.privateinternetaccess.com/installer/pia-nm.sh
-chmod +x pia-nm.sh
+echo "Setting up PIA"
+wget https://www.privateinternetaccess.com/openvpn/openvpn-nextgen.zip
+unzip openvpn-nextgen.zip
+nmcli connection import type openvpn file ./Netherlands.ovpn
 
 clear
 
