@@ -47,9 +47,9 @@ clear
 echo "Setting up dotfiles"
 ## cp dotfiles/.muttrc
 cp -R dotfiles/.config ~/
-cp dotfiles/.Xresources ~/.Xresources
+cp dotfiles/.Xresources ~/
 cp /etc/skel/.bashrc ~/.bashrc
-cp /etc/X11/xinit/xinitrc ~/.xinitrc
+#cp /etc/X11/xinit/xinitrc ~/.xinitrc
 clear
 
 ##
